@@ -1,0 +1,209 @@
+/* =============================================================================
+   E-TİCARET MARKETPLACE - ANA CSS DOSYASI
+   =============================================================================
+   Bu dosya Tailwind CSS direktiflerini ve global stilleri içerir.
+   Özel bileşen stilleri ve yardımcı sınıflar burada tanımlanır.
+   ============================================================================= */
+
+/* =============================================================================
+   TAİLWİND CSS DİREKTİFLERİ
+   ============================================================================= */
+/* Temel stiller - reset ve normalize */
+@tailwind base;
+
+/* Bileşen stilleri - butonlar, formlar vs. */
+@tailwind components;
+
+/* Yardımcı sınıflar - margin, padding, renkler vs. */
+@tailwind utilities;
+
+/* =============================================================================
+   TEMEL STİLLER (BASE LAYER)
+   =============================================================================
+   HTML elementlerinin varsayılan stillerini özelleştiriyoruz
+   ============================================================================= */
+@layer base {
+  /* Sayfa geçişlerinde yumuşak renk animasyonu */
+  html {
+    @apply scroll-smooth;
+  }
+
+  /* Body varsayılan stilleri */
+  body {
+    @apply bg-surface-light dark:bg-surface-dark;
+    @apply text-gray-900 dark:text-gray-100;
+    @apply font-sans antialiased;
+    @apply transition-colors duration-300;
+  }
+
+  /* Başlık stilleri - Display font kullanır */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold;
+    @apply text-gray-900 dark:text-white;
+  }
+
+  /* Link stilleri */
+  a {
+    @apply text-primary-600 dark:text-primary-400;
+    @apply hover:text-primary-700 dark:hover:text-primary-300;
+    @apply transition-colors duration-200;
+  }
+}
+
+/* =============================================================================
+   BİLEŞEN STİLLERİ (COMPONENTS LAYER)
+   =============================================================================
+   Tekrar kullanılabilir UI bileşenleri için özel sınıflar
+   ============================================================================= */
+@layer components {
+  /* -------------------------------------------------------------------------
+     BUTON BİLEŞENLERİ
+     ------------------------------------------------------------------------- */
+  
+  /* Ana buton stili - dolu arka plan */
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl;
+    @apply bg-primary-600 hover:bg-primary-700;
+    @apply text-white font-medium;
+    @apply shadow-md hover:shadow-lg;
+    @apply transform hover:-translate-y-0.5;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+
+  /* İkincil buton stili - kenarlıklı */
+  .btn-secondary {
+    @apply px-6 py-3 rounded-xl;
+    @apply bg-transparent border-2 border-primary-600;
+    @apply text-primary-600 dark:text-primary-400 dark:border-primary-400;
+    @apply hover:bg-primary-50 dark:hover:bg-primary-900/20;
+    @apply font-medium;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  /* Tehlike butonu - silme, iptal işlemleri için */
+  .btn-danger {
+    @apply px-6 py-3 rounded-xl;
+    @apply bg-danger-600 hover:bg-danger-700;
+    @apply text-white font-medium;
+    @apply transition-all duration-200;
+  }
+
+  /* -------------------------------------------------------------------------
+     KART BİLEŞENLERİ
+     ------------------------------------------------------------------------- */
+  
+  /* Standart kart stili */
+  .card {
+    @apply bg-white dark:bg-surface-dark-secondary;
+    @apply rounded-2xl;
+    @apply shadow-card hover:shadow-card-hover;
+    @apply border border-surface-light-border dark:border-surface-dark-border;
+    @apply transition-all duration-300;
+  }
+
+  /* Cam efektli kart (Glassmorphism) */
+  .card-glass {
+    @apply backdrop-blur-lg;
+    @apply bg-white/70 dark:bg-surface-dark-secondary/70;
+    @apply rounded-2xl;
+    @apply shadow-glass dark:shadow-glass-dark;
+    @apply border border-white/20 dark:border-white/10;
+  }
+
+  /* -------------------------------------------------------------------------
+     FORM ELEMANLARI
+     ------------------------------------------------------------------------- */
+  
+  /* Metin girişi stili */
+  .input {
+    @apply w-full px-4 py-3 rounded-xl;
+    @apply bg-surface-light-secondary dark:bg-surface-dark-tertiary;
+    @apply border border-surface-light-border dark:border-surface-dark-border;
+    @apply text-gray-900 dark:text-gray-100;
+    @apply placeholder:text-gray-400 dark:placeholder:text-gray-500;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply transition-all duration-200;
+  }
+
+  /* Etiket stili */
+  .label {
+    @apply block text-sm font-medium;
+    @apply text-gray-700 dark:text-gray-300;
+    @apply mb-2;
+  }
+
+  /* -------------------------------------------------------------------------
+     DURUM ROZETLERİ (BADGES)
+     ------------------------------------------------------------------------- */
+  
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-success {
+    @apply badge bg-success-100 text-success-600 dark:bg-success-600/20 dark:text-success-400;
+  }
+
+  .badge-warning {
+    @apply badge bg-warning-100 text-warning-600 dark:bg-warning-600/20 dark:text-warning-400;
+  }
+
+  .badge-danger {
+    @apply badge bg-danger-100 text-danger-600 dark:bg-danger-600/20 dark:text-danger-400;
+  }
+
+  /* -------------------------------------------------------------------------
+     NAVİGASYON
+     ------------------------------------------------------------------------- */
+  
+  .nav-link {
+    @apply px-4 py-2 rounded-lg;
+    @apply text-gray-600 dark:text-gray-400;
+    @apply hover:text-gray-900 dark:hover:text-white;
+    @apply hover:bg-gray-100 dark:hover:bg-surface-dark-tertiary;
+    @apply transition-all duration-200;
+  }
+
+  .nav-link-active {
+    @apply nav-link;
+    @apply text-primary-600 dark:text-primary-400;
+    @apply bg-primary-50 dark:bg-primary-900/20;
+  }
+}
+
+/* =============================================================================
+   YARDIMCI SINIFLAR (UTILITIES LAYER)
+   =============================================================================
+   Özel yardımcı sınıflar
+   ============================================================================= */
+@layer utilities {
+  /* Metin gradient efekti */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600;
+  }
+
+  /* Gizli kaydırma çubuğu */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Animasyonlu gradient arka plan */
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}

@@ -1,0 +1,114 @@
+# =============================================================================
+# E-TİCARET MARKETPLACE - .gitignore
+# =============================================================================
+# Bu dosya Git'in takip etmemesi gereken dosya ve klasörleri belirtir.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# BAĞIMLILIKLAR (Dependencies)
+# -----------------------------------------------------------------------------
+# npm/yarn ile yüklenen paketler - büyük boyutlu ve yeniden yüklenebilir
+node_modules/
+*/node_modules/
+
+# -----------------------------------------------------------------------------
+# ORTAM DEĞİŞKENLERİ (Environment Variables)
+# -----------------------------------------------------------------------------
+# Hassas bilgiler içerir (şifreler, API anahtarları, vb.)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# .env.example dosyası KORUNMALI - örnek olarak gerekli
+!.env.example
+
+# -----------------------------------------------------------------------------
+# VERİTABANI DOSYALARI
+# -----------------------------------------------------------------------------
+# SQLite veritabanı dosyası - lokal geliştirme verisi
+*.sqlite
+*.sqlite3
+*.db
+
+# -----------------------------------------------------------------------------
+# LOG DOSYALARI
+# -----------------------------------------------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# -----------------------------------------------------------------------------
+# BUILD ÇIKTILARI
+# -----------------------------------------------------------------------------
+# Derleme/build sürecinde oluşan dosyalar
+dist/
+build/
+.vite/
+*.tsbuildinfo
+
+# -----------------------------------------------------------------------------
+# ÖNBELLEK (Cache)
+# -----------------------------------------------------------------------------
+.cache/
+.npm/
+.eslintcache
+.parcel-cache/
+
+# -----------------------------------------------------------------------------
+# EDİTÖR VE IDE DOSYALARI
+# -----------------------------------------------------------------------------
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# JetBrains IDE'leri (WebStorm, IntelliJ)
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# -----------------------------------------------------------------------------
+# İŞLETİM SİSTEMİ DOSYALARI
+# -----------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# -----------------------------------------------------------------------------
+# ELECTRON BUILD DOSYALARI
+# -----------------------------------------------------------------------------
+# Electron masaüstü uygulama build çıktıları
+out/
+release/
+*.exe
+*.dmg
+*.AppImage
+
+# -----------------------------------------------------------------------------
+# TEST DOSYALARI
+# -----------------------------------------------------------------------------
+coverage/
+.nyc_output/
+
+# -----------------------------------------------------------------------------
+# GEÇİCİ DOSYALAR
+# -----------------------------------------------------------------------------
+*.tmp
+*.temp
+*.swp
+*.swo
