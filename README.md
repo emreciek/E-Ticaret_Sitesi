@@ -54,4 +54,4 @@ linkedn:www.linkedin.com/in/emre-cicek-3a847b212
 instagram:emreciek
 ---
 
-⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!
+Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!
